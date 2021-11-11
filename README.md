@@ -1,2 +1,3 @@
-# BLOCK_A_BOT
-Just a bot we (BSCS - BLOCK A) 2021 we made just for fun. 
+HELLO FELLO BLOCK A STUDENTS
+- HMU (ern) if u need help setting it up
+LEZZGETIT
