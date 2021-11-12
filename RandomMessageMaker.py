@@ -1,5 +1,6 @@
-from typing import List, Dict, Union
+from typing import List, Union
 from MarkovC import MarkovC, MarkovCStateType, MarkovCNavigator, MarkovCBuilder
+
 
 class RandomMessageMaker():
     def __init__(self) -> None:
@@ -15,16 +16,16 @@ class RandomMessageMaker():
             builder.end_append()
         self.chain = builder.get_markov_c()
 
-    def set_chain(self, new_chain: Dict) -> None:
+    def set_chain(self, new_chain: MarkovC) -> None:
         self.chain = new_chain
-    
+
     def get_chain(self) -> MarkovC:
         return self.chain
-    
+
     def generate_message(self, markov_c: Union[MarkovC, None] = None) -> str:
-        if markov_c == None:
+        if markov_c is None:
             markov_c = self.chain
-        
+
         navigator: MarkovCNavigator = MarkovCNavigator(markov_c)
         navigator.travel_to_random_node()
         message: str = navigator.get_current_node()

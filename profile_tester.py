@@ -1,7 +1,9 @@
 import argparse
 from RandomMessageMaker import RandomMessageMaker
 
-my_parser = argparse.ArgumentParser(description='generates a markov chain profile')
+my_parser = argparse.ArgumentParser(
+    description='generates a markov chain profile'
+)
 
 my_parser.add_argument(
     'Path',
