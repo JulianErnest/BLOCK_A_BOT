@@ -1,9 +1,7 @@
 # bot.py
 import os
 import discord
-from dotenv import load_dotenv
 
-load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 
@@ -17,4 +15,4 @@ class MyClient(discord.Client):
 
 client = MyClient()
 
-client.run(TOKEN)
+client.run(os.environ['DISCORD_TOKEN'])
