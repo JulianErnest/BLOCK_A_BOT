@@ -11,7 +11,7 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
 
-        if message.content.starsWith('BA'):
+        if message.content.starswith('BA'):
             await message.reply("Hello")
 
 client = MyClient()
