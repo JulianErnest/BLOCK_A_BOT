@@ -2,9 +2,6 @@
 import os
 import discord
 
-TOKEN = os.getenv('DISCORD_TOKEN')
-
-
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
@@ -15,8 +12,7 @@ class MyClient(discord.Client):
             return
 
         if message.content.starsWith('BA'):
-            await message.reply(f"Hello ${message.author}")
+            await message.reply("Hello")
 
 client = MyClient()
-
 client.run(os.environ['DISCORD_TOKEN'])
