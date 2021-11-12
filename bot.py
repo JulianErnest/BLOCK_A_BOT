@@ -10,10 +10,12 @@ class MyClient(discord.Client):
         print('Logged on as {0}!'.format(self.user))
 
     async def on_message(self, message: discord.Message):
+        # * Stops the bot from replying to itself
+        if message.author.id == self.user.id:
+            return
+
         if message.content.starsWith('BA'):
-            channel = message.channel
-            author = message.author.display_name
-            await channel.send(f"Hello ${author}")
+            await message.reply(f"Hello ${message.author}")
 
 client = MyClient()
 
